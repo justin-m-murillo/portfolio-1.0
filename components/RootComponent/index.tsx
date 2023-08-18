@@ -1,15 +1,16 @@
-import React, { PropsWithChildren, forwardRef, Ref } from 'react'
+import React, { forwardRef, Ref, ReactNode } from 'react'
 import styles from './styles'
 
 type Props = {
-  addStyle?: string
+  rootStyle?: string,
+  children: ReactNode
 }
 
 const RootComponent = forwardRef(
-  ({ addStyle, children }: PropsWithChildren<Props>, ref: Ref<HTMLDivElement>) => {
+  ({ rootStyle, children }: Props, ref: Ref<HTMLDivElement>) => {
     return (
       <div 
-        className={`${styles.root} ${addStyle}`}
+        className={`${styles.root} ${rootStyle}`}
         ref={ref}
       >
         { children }

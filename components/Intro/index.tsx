@@ -22,17 +22,17 @@ const Intro = (props: Props) => {
 
   const buttons = [
     { id: '#about', tag: 'About'},
-    { id: '#experience', tag: 'Experience'},
+    // { id: '#experience', tag: 'Experience'},
     { id: '#skills', tag: 'Skills'},
-    { id: '#Project', tag: 'Projects'},
+    { id: '#projects', tag: 'Projects'},
   ]
 
   return (
-    <RootComponent addStyle={styles.root}>
+    <RootComponent rootStyle={styles.root}>
       <BackgroundCircleSet />
       <FacePortrait />
       <div className='z-20'>
-        <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
+        <h2 className={styles.developer}>
           Frontend Developer
         </h2>
         <Typewriter words={words} />
